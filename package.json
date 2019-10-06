@@ -3,6 +3,7 @@
   "version": "0.1.15",
   "private": false,
   "dependencies": {
+    "@emotion/core": "^10.0.21",
     "react": "16.10.1",
     "react-dom": "16.10.1",
     "react-scripts": "3.1.2",
