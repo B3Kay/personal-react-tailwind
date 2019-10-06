@@ -5,7 +5,7 @@
 
 ## About
 
-Tailwind starter project based on create-react-app
+Personal website based on a Tailwind starter project with create-react-app
 
 ## Available Scripts
 
