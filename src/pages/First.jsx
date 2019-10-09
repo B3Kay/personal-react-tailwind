@@ -1,10 +1,13 @@
 import React from "react";
 import TopNav from "../components/TopNav";
+import { GradientContext } from "../ThemContext";
 
-const FirstPage = () => {
+const FirstPage = (props) => {
   return (
-    <div className={`bg-gradient-br-indigo-pink w-full `} style={{ height: "100vh" }}>
-      <TopNav></TopNav>
+    <GradientContext.Consumer>
+    {({ gradient, setGradient }) => (
+    <div className={`bg-gradient-br-${gradient} w-full `} style={{ height: "100vh" }}>
+      <TopNav showPortal={props.showPortal} togglePortal={props.togglePortal}></TopNav>
       <div className="w-full max-w-screen-xl relative mx-auto px-6 pt-16 pb-40 md:pb-24">
         <dic className="xl:flex -mx-6">
           <div className="px-6 text-left md:text-center xl:text-left max-w-2xl md:max-w-3xl mx-auto">
@@ -24,6 +27,8 @@ const FirstPage = () => {
         </dic>
       </div>
     </div>
+    )}
+    </GradientContext.Consumer>
   );
 };
 

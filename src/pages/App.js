@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import FirstPage from "./First";
-import SecondPage from "./Second";
+import ThemeSelect from "./ThemeSelect";
 
 import {GradientContext} from '../ThemContext';
 
@@ -9,14 +9,16 @@ import {GradientContext} from '../ThemContext';
 function App() {
   // const themeToggle = useTheme();
   const [context, setContext] = useState("blue-pink");
+  
+  const [showPortal, togglePortal] = useState(true);
 
   return (
     <>
       <GradientContext.Provider
         value={{ gradient: context, setGradient: setContext }}
       >
-        <FirstPage></FirstPage>
-        <SecondPage></SecondPage>
+        <FirstPage showPortal={showPortal} togglePortal={togglePortal}></FirstPage>
+        {showPortal && <ThemeSelect  togglePortal={togglePortal}></ThemeSelect>}
       </GradientContext.Provider>
     </>
   );
